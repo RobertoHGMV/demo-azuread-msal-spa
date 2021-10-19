@@ -1,0 +1,17 @@
+<router-outlet></router-outlet>
+<h1 class="title animate__animated animate__fadeIn">{{ title }}</h1>
+
+<ul class="animate__animated animate__flipInX">
+  <li *ngIf="isLoggedIn()">Você está logado</li>
+  <li *ngIf="!isLoggedIn()">Você não está logado</li>
+  <li><a routerLink="home-page">Home Page (Não necessário logar)</a></li>
+  <li><a routerLink="list-page">List Page (Necessário logar)</a></li>
+</ul>
+<br><br>
+
+<button class="animate__animated animate__fadeInUp button" (click)="login()" *ngIf="!isLoggedIn()">
+  SIGN IN
+</button>
+<button class="animate__animated animate__fadeInUp button" (click)="logout()" *ngIf="isLoggedIn()">
+  SIGN OUT
+</button>
